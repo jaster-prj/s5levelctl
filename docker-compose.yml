@@ -1,0 +1,9 @@
+services:
+  firmware-dummy:
+    build:
+      context: ./test/firmware-dummy
+    container_name: s5levelctl-firmware-dummy
+    network_mode: bridge
+    ports:
+      - "${S5LEVELCTL_DUMMY_PORT:-2222}:22"
+    restart: unless-stopped
